@@ -63,6 +63,7 @@ client.on( 'message', message => {
 		//!ban
 	} if (command === 'ban')
 	client.commands.get('ban').execute(message, args); {
+		//!unban
 	} if ( command === 'unban')
 	client.commands.get("unban").execute(message, args); {
 
