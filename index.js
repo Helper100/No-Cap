@@ -56,7 +56,7 @@ client.on( 'message', message => {
 		client.commands.get('reload').execute(message, args);
 		//!status
 	} else if (command === 'status') {
-		client.user.setActivity('Over 2 Servers', { type: 'WATCHING' });
+		client.user.setActivity('Over 3 Servers', { type: 'WATCHING' });
 		//!purge
 	} else if (command === 'purge')
 	client.commands.get('purge').execute(message, args); {

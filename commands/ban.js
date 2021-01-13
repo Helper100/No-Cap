@@ -6,13 +6,23 @@ module.exports = {
             // Ignore messages that aren't from a guild
             if (!message.guild) return;
 
-            let user = client.users.find(u => u.tag === "someUser#1234");
-            user.send("You have been banned from", message.guild.name);
-            then(() => {
+            //DM's user that they have been banned
+            async function banBefore(message, args) {
+
+                let member = message.guild.members.cache.get("id") || message.guild.members.cache.get(args[0])
+                // to send a message to the user
+                if (member !== undefined) {
+                  await member.user.send("You have been banned from", message.guild.name)
+                }
+                await member.ban()
+                }
+                .then(() => {
+                //Ban's User
                     const user = message.mentions.users.first();
                     message.guild.members.ban(user);
                 })
                 .then(() => {
+                    //Notifies that user was banned
                     message.reply("Banned Mentioned User. User has been notified");
                 })
 
