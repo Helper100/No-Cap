@@ -30,6 +30,7 @@ client.once('ready', () => {
 client.on( 'message', message => {
 
 	client.user.setActivity(`over ${client.guilds.cache.size} servers`, { type: 'WATCHING' });
+	client.commands.get('welcome').execute(message, args);
 	
 	if (!message.content.startsWith(prefix) || message.author.bot) return;
 
