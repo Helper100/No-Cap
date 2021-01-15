@@ -28,6 +28,8 @@ client.once('ready', () => {
 });
 
 client.on( 'message', message => {
+
+	client.user.setActivity(`over ${client.guilds.cache.size} servers`, { type: 'WATCHING' });
 	
 	if (!message.content.startsWith(prefix) || message.author.bot) return;
 
@@ -36,9 +38,6 @@ client.on( 'message', message => {
 		//!ping 
 	 if (command === 'ping') {
 		client.commands.get('ping').execute(message, args);
-		//!beep
-	} else if (command === 'beep') {
-		client.commands.get('beep').execute(message, args);
 		//!server
 	} else if (command === 'server') {
 		client.commands.get('server').execute(message, args);
@@ -56,7 +55,7 @@ client.on( 'message', message => {
 		client.commands.get('reload').execute(message, args);
 		//!status
 	} else if (command === 'status') {
-		client.user.setActivity('Over 3 Servers', { type: 'WATCHING' });
+		client.user.setActivity(`over ${client.guilds.cache.size} servers`, { type: 'WATCHING' });
 		//!purge
 	} else if (command === 'purge')
 	client.commands.get('purge').execute(message, args); {
