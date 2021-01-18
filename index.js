@@ -20,6 +20,7 @@ for (const file of commandFiles) {
 }
 //This Calls on config.json to get the prefix
 const { prefix } = config
+const { token } = config
 
 // when the client is ready, run this code
 // this event will only trigger one time after logging in
@@ -30,7 +31,8 @@ client.once('ready', () => {
 client.on( 'message', message => {
 
 	client.user.setActivity(`over ${client.guilds.cache.size} servers`, { type: 'WATCHING' });
-	client.commands.get('welcome').execute(message, args);
+	//This should be enabled later
+	//client.commands.get('welcome').execute(message);
 	
 	if (!message.content.startsWith(prefix) || message.author.bot) return;
 
@@ -66,9 +68,10 @@ client.on( 'message', message => {
 		//!unban
 	} if ( command === 'unban')
 	client.commands.get("unban").execute(message, args); {
-
+	} if (command === 'stats') 
+	client.commands.get("stats").execute(message, args); {
 	}
 });
 
 //login to Discord with app token
-client.login('Nzg4OTIxOTAyMDU1ODE3MjI2.X9qixg.C9i-BL6Vs4w6sstBB-zZtH5NVOY');
+client.login('Nzg4OTIxOTAyMDU1ODE3MjI2.X9qixg.0wb-VCzLnYyeu0fqfXfOorBwm_s');

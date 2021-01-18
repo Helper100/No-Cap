@@ -11,7 +11,7 @@ module.exports = {
               await message.channel.bulkDelete(amount).catch(err => {
                   console.error(err);
                   hasError = true;
-                  message.reply('Unable to delete message because ' + err)
+                  message.reply('Unable to delete message because ' + err + '. If this keeps happening contact staff in our support server and mention error code P1')
               })
               if (hasError) {
                   return

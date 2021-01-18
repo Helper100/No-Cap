@@ -2,8 +2,10 @@ module.exports = {
     name: 'welcome',
     description: 'Welcomes and notifies when a user has left.',
     execute(message, args) {
+        const Discord = require('discord.js');
+        const client = new Discord.Client();
         //Welcome & goodbye messages\\
-client.on('guildMemberAdd', member => {
+    client.on('guildMemberAdd', member => {
     member.roles.add(member.guild.roles.cache.find(i => i.name === 'Among The Server'))
 
     const welcomeEmbed = new Discord.MessageEmbed()

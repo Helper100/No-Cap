@@ -7,7 +7,7 @@ module.exports = {
             if (!message.guild) return;
 
             // If the message content starts with "!kick"
-            if (message.content.startsWith('!kick')) {
+            if (message.content.startsWith('nc!kick')) {
                 // Assuming we mention someone in the message, this will return the user
                 // Read more about mentions over at https://discord.js.org/#/docs/main/master/class/MessageMentions
                 const user = message.mentions.users.first();
@@ -32,7 +32,7 @@ module.exports = {
                                 // An error happened
                                 // This is generally due to the bot not being able to kick the member,
                                 // either due to missing permissions or role hierarchy
-                                message.reply('I was unable to kick the member');
+                                message.reply('I was unable to kick the member. If this keeps happening contact staff at https://discord.gg/kBUvJhZ79h and mention error code K1');
                                 // Log the error
                                 console.error(err);
                             });
